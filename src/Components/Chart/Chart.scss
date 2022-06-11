@@ -5,12 +5,38 @@
   width: 540px;
   height: 510px;
   padding: 40px;
+  padding-top: 30px;
   border-radius: $bigRadius;
 
   &__graph {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    margin-top: 70px;
+    margin-top: 55px;
+  }
+}
+
+.recap__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.recap {
+  &__percentage {
+    text-align: end;
+  }
+  &__text {
+    color: $neutralMediumBrown;
+    font-weight: 400;
+    font-size: $fontSize;
+  }
+  &__total {
+    color: $neutralDarkBrown;
+    font-weight: 700;
+    &--amount {
+      font-size: 3em;
+      margin-bottom: 0;
+    }
   }
 }

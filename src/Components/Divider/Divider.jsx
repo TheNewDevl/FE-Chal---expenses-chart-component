@@ -1,7 +1,7 @@
 import './Divider.scss'
 
 const Divider = () => {
-  return <div>Divider</div>
+  return <div className="divider"></div>
 }
 
 export default Divider

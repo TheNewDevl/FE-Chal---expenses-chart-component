@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 import { useEffect, useState } from 'react'
 
-const Day = ({ day, total, bigger }) => {
+const Day = ({ day, total, index }) => {
   const [percentage, setPercentage] = useState()
   const [height, setHeight] = useState(0)
   const [hover, setHover] = useState(false)
@@ -16,35 +16,40 @@ const Day = ({ day, total, bigger }) => {
       setPercentage(() => calcPercentage())
     }
     if (percentage) {
-      setHeight(percentage * 6.52)
+      setHeight(() => percentage * 6.52)
     }
     setPercentage(() => calcPercentage())
   }, [total, day.amount, percentage])
 
   const Spends = () => {
-    return <span on className="day__spends">{`$${day.amount}`}</span>
+    return <span className="day__spends">{`$${day.amount}`}</span>
   }
 
-  return (
-    <>
-      <div className="day">
-        {hover && <Spends />}
-        <div
-          onMouseEnter={() => setHover(true)}
-          onMouseOut={() => setHover(false)}
-          style={{ height }}
-          className={bigger ? 'day__bar day__bar--bigger' : 'day__bar'}
-        ></div>
-        <p className="day__string">{day.day}</p>
-      </div>
-    </>
-  )
+  if (height > 0 && height < 500)
+    return (
+      <>
+        <div className="day">
+          {hover && <Spends />}
+          <div
+            onMouseEnter={() => setHover(true)}
+            onMouseOut={() => setHover(false)}
+            style={{ height }}
+            className={
+              index === new Date().getUTCDay()
+                ? 'day__bar day__bar--bigger'
+                : 'day__bar'
+            }
+          ></div>
+          <p className="day__string">{day.day}</p>
+        </div>
+      </>
+    )
 }
 
 Day.propTypes = {
   day: PropTypes.object.isRequired,
   total: PropTypes.number.isRequired,
-  bigger: PropTypes.bool,
+  index: PropTypes.number.isRequired,
 }
 
 export default Day
