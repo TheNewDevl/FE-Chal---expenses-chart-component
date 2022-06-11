@@ -1,0 +1,16 @@
+@use '../../styles/variables.scss' as *;
+
+.chart {
+  background-color: $neutralPaleOrange;
+  width: 540px;
+  height: 510px;
+  padding: 40px;
+  border-radius: $bigRadius;
+
+  &__graph {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 70px;
+  }
+}

@@ -1,4 +1,3 @@
-import React from 'react'
 import LogoSvg from '../../assets/logo.svg'
 import './Header.scss'
 

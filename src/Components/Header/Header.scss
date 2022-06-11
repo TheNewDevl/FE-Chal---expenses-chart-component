@@ -8,15 +8,14 @@
   justify-content: space-between;
   align-items: center;
   padding: 30px;
-  color: #fff;
-  border-radius: 20px;
+  color: $neutralCream;
+  border-radius: $bigRadius;
 
   &__amount {
     font-weight: 700;
   }
 
   &__text {
-    color: $neutralCream;
     margin-bottom: 0.5em;
   }
 }
