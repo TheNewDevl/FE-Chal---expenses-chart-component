@@ -1,0 +1,22 @@
+@use '../../styles/variables' as *;
+
+.header {
+  background-color: $primaryRed;
+  width: 540px;
+  height: 125px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+  color: #fff;
+  border-radius: 20px;
+
+  &__amount {
+    font-weight: 700;
+  }
+
+  &__text {
+    color: $neutralCream;
+    margin-bottom: 0.5em;
+  }
+}
