@@ -30,7 +30,6 @@ const Day = ({ day, total, index }) => {
         <div className="day">
           {hover && <Spends />}
           <div
-            onClick={() => console.log(index)}
             onMouseEnter={() => setHover(true)}
             onMouseOut={() => setHover(false)}
             style={{ height }}
