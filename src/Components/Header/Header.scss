@@ -1,9 +1,14 @@
 @use '../../styles/variables' as *;
+@use '../../styles/mixin' as *;
 
 .header {
   background-color: $primaryRed;
   width: 540px;
+  width: clamp(340px, 90vw + 1em, 540px);
+
   height: 125px;
+  height: clamp(95px, 20vw + 1em, 125px);
+
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -11,8 +16,15 @@
   color: $neutralCream;
   border-radius: $bigRadius;
 
+  @include media {
+    border-radius: 10px;
+    padding: 30px 20px 30px 20px;
+  }
+
   &__amount {
     font-weight: 700;
+    font-size: 2em;
+    font-size: clamp(1.5em, 2.2vw + 1em, 2em);
   }
 
   &__text {

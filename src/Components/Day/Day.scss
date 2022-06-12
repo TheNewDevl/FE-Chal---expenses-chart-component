@@ -1,19 +1,24 @@
 @use '../../styles/variables' as *;
+@use '../../styles/mixin' as *;
 
 .day {
   display: flex;
   flex-direction: column;
   align-items: center;
-
   position: relative;
+
   &__bar {
     margin-top: 7px;
     width: 50px;
+    width: clamp(35px, 9.4vw, 50px);
     height: 100px;
     background-color: $primaryRed;
     border-radius: $xsRadius;
     margin-bottom: 10px;
     cursor: pointer;
+    @include media {
+      margin-top: 0;
+    }
     &:hover {
       background-color: lighten($color: $primaryRed, $amount: 10%);
     }
@@ -29,6 +34,9 @@
   &__string {
     text-align: center;
     color: $neutralMediumBrown;
+    @include media {
+      font-size: 0.8em;
+    }
   }
 
   &__spends {

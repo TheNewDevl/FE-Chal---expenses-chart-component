@@ -1,13 +1,22 @@
 @use '../../styles/variables.scss' as *;
+@use '../../styles/mixin.scss' as *;
 
 .chart {
   background-color: $neutralPaleOrange;
   width: 540px;
-  height: 510px;
+  width: clamp(340px, 90vw + 1em, 540px);
+  min-height: fit-content;
   padding: 40px;
   padding-top: 30px;
   border-radius: $bigRadius;
+  @include media {
+    padding: 30px 20px;
+  }
 
+  &__title {
+    font-size: 32px;
+    font-size: clamp(22px, 2vw + 1em, 32px);
+  }
   &__graph {
     display: flex;
     justify-content: space-between;
@@ -30,12 +39,14 @@
     color: $neutralMediumBrown;
     font-weight: 400;
     font-size: $fontSize;
+    font-size: clamp(15px, 4vw, $fontSize);
   }
   &__total {
     color: $neutralDarkBrown;
     font-weight: 700;
     &--amount {
       font-size: 3em;
+      font-size: clamp(30px, 8vw, 3em);
       margin-bottom: 0;
     }
   }

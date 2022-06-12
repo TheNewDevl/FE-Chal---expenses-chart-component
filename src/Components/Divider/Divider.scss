@@ -1,8 +1,12 @@
 @use '../../styles/variables.scss' as *;
+@use '../../styles/mixin.scss' as *;
 
 .divider {
   width: 100%;
   height: 2px;
   margin: 2em 0;
   background-color: $neutralCream;
+  @include media() {
+    margin: 1.5em 0;
+  }
 }

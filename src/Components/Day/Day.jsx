@@ -7,7 +7,6 @@ const Day = ({ day, total, index }) => {
   const [percentage, setPercentage] = useState()
   const [height, setHeight] = useState(0)
   const [hover, setHover] = useState(false)
-
   useEffect(() => {
     const calcPercentage = () => {
       return Math.round((day.amount * 100) / total)
@@ -31,11 +30,12 @@ const Day = ({ day, total, index }) => {
         <div className="day">
           {hover && <Spends />}
           <div
+            onClick={() => console.log(index)}
             onMouseEnter={() => setHover(true)}
             onMouseOut={() => setHover(false)}
             style={{ height }}
             className={
-              index === new Date().getUTCDay()
+              index === new Date().getDay()
                 ? 'day__bar day__bar--bigger'
                 : 'day__bar'
             }

@@ -21,11 +21,12 @@ const Chart = () => {
 
   return (
     <main className="chart">
-      <h1>Spending - Last 7 days</h1>
+      <h1 className="chart__title">Spending - Last 7 days</h1>
 
       <div className="chart__graph">
         {data.map((day, index) => {
-          return <Day key={index} day={day} total={total} index={index} />
+          const iDay = index === 6 ? 0 : index + 1
+          return <Day key={index} day={day} total={total} index={iDay} />
         })}
       </div>
       <Divider />
