@@ -53,6 +53,9 @@
     top: -40px;
     transform: scale(0);
     animation: growUp 200ms forwards ease-in-out;
+    @include media {
+      top: -50px;
+    }
   }
 }
 @keyframes growUp {
